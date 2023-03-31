@@ -1,0 +1,4 @@
+# Para ignorar todos os arquivos e sub-pastas da pasta "metadata/"
+mongoDb/database-data/
+mySql/data
+postgres/PGData

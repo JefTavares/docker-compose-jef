@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    teachteam-mysql-db:
+        image: mysql
+        container_name: jeftavares-mysql-db
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: bato010407
+            MYSQL_USER: jeftavares
+            MYSQL_PASSWORD: bato010407
+            MYSQL_ROOT_HOST: '%'
