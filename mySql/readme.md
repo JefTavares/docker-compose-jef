@@ -13,3 +13,7 @@ Defina seus valores como "false" e "true" clicando duas vezes na coluna "value"
 O usuario hoje é
 root
 bato010407
+
+#### Tutorial bom
+
+https://blog.christian-schou.dk/creating-and-running-a-mysql-database-with-docker-compose/
