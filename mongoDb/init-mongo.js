@@ -1,10 +1,10 @@
 db.createUser({
   user: "jeftavares",
-  pwd: "010407",
+  pwd: "12345",
   roles: [
     {
       role: "readWrite",
-      db: "my_db",
+      db: "webhook_db",
     },
   ],
 });

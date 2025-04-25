@@ -1,0 +1,28 @@
+version: "3.1"
+
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: localstack-jef
+    ports:
+      - "127.0.0.1:4566:4566" # LocalStack Gateway
+      - "127.0.0.1:4510-4559:4510-4559" # ext services port range
+      - "127.0.0.1:443:443" # LocalStack HTTPS Gateway
+      # - "127.0.0.1:53:53" # DNS config
+      # - "127.0.0.1:53:53/udp" # DNS config
+    hostname: localstack-jef
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - DEBUG=1
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - LS_LOG=WARN
+      - HOSTNAME_EXTERNAL=localstack
+      - SERVICES=s3,dynamodb,sqs,redshift
+      # - PERSISTENCE=${PERSISTENCE-}
+      # - LAMBDA_EXECUTOR=${LAMBDA_EXECUTOR-}
+      # - LOCALSTACK_API_KEY=${LOCALSTACK_API_KEY-} # only required for Pro
+    volumes:
+      # - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
